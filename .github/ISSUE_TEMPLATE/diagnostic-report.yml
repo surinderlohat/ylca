@@ -1,0 +1,64 @@
+name: 🧪 Diagnostic Report
+description: Submit system diagnostics for troubleshooting
+title: "[Diagnostics]: "
+labels: ["diagnostics"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template when asked to submit diagnostics.
+        Do NOT include private keys, secrets, or proprietary code.
+
+  - type: input
+    id: os
+    attributes:
+      label: Operating System
+      placeholder: "Windows 11 / Ubuntu 22.04 / macOS"
+    validations:
+      required: true
+
+  - type: input
+    id: cpu
+    attributes:
+      label: CPU
+      placeholder: "Intel i7 / Ryzen 7 / Apple M-series"
+    validations:
+      required: true
+
+  - type: input
+    id: gpu
+    attributes:
+      label: GPU (if any)
+      placeholder: "NVIDIA RTX 3060 / None"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: execution_mode
+    attributes:
+      label: Execution Mode
+      options:
+        - Local
+        - Cloud
+        - Hybrid
+    validations:
+      required: true
+
+  - type: textarea
+    id: diagnostic_output
+    attributes:
+      label: Full Diagnostic Output
+      description: Paste output from the diagnostic command/script
+      render: shell
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: safety_check
+    attributes:
+      label: Safety Check
+      options:
+        - label: I confirm this report does not include sensitive or private data
+          required: true
