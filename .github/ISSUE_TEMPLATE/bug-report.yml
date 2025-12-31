@@ -1,0 +1,82 @@
+name: 🐞 Bug Report
+description: Report a reproducible problem with YLCA Agent
+title: "[Bug]: "
+labels: ["bug"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting a bug.
+        Please fill out all required fields. Incomplete reports may be closed.
+
+  - type: input
+    id: os
+    attributes:
+      label: Operating System
+      description: e.g. Windows 11, Ubuntu 22.04, macOS 14
+      placeholder: "Windows 11"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: execution_mode
+    attributes:
+      label: Execution Mode
+      description: How is YLCA Agent running?
+      options:
+        - Local
+        - Cloud
+        - Hybrid
+    validations:
+      required: true
+
+  - type: input
+    id: model
+    attributes:
+      label: LLM Model Used
+      description: Local model name (if applicable)
+      placeholder: "llama-3.x, qwen, mistral, etc."
+    validations:
+      required: false
+
+  - type: textarea
+    id: issue_description
+    attributes:
+      label: Issue Description
+      description: Clearly describe what went wrong
+      placeholder: "What happened? What did you expect to happen?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: Provide exact steps to reproduce the issue
+      placeholder: |
+        1. Start YLCA Agent
+        2. Load model
+        3. Run task
+    validations:
+      required: true
+
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Diagnostic Output
+      description: Paste diagnostic output here (remove sensitive data)
+      render: shell
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmation
+      options:
+        - label: I have reviewed the documentation and existing issues
+          required: true
+        - label: I confirm no sensitive or private data is included
+          required: true
