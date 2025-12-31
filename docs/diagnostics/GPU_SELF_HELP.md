@@ -115,6 +115,8 @@ llama-server.exe --version
 ```
 
 ### Expected
+<img width="1011" height="375" alt="image" src="https://github.com/user-attachments/assets/75973167-e30a-4b44-85b7-773567d475e2" />
+
 
 Output mentions:
 
